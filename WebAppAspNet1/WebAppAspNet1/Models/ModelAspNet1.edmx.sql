@@ -38,7 +38,8 @@ GO
 CREATE TABLE [dbo].[Empleados] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Nombre] nvarchar(max)  NOT NULL,
-    [Apellido] nvarchar(max)  NOT NULL
+    [Apellido] nvarchar(max)  NOT NULL,
+	[Direccion] nvarchar(max)  NULL
 );
 GO
 
@@ -58,6 +59,8 @@ ADD CONSTRAINT [PK_Empleados]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
+ALTER TABLE [dbo].[Empleados]
+ADD [Direccion] nvarchar(max)  NULL
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------

@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Empleados">
       <EntityTypeMapping TypeName="IsTypeOf(ModelAspNet1.Empleado)">
         <MappingFragment StoreEntitySet="Empleados">
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />

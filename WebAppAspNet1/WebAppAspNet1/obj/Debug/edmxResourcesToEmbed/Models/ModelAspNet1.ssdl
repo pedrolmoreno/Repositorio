@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ModelAspNet1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="ModelAspNet1StoreContainer">
-    <EntitySet Name="Departamentos" EntityType="ModelAspNet1.Store.Departamentos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Empleados" EntityType="ModelAspNet1.Store.Empleados" store:Type="Tables" Schema="dbo" />
-  </EntityContainer>
+<Schema Namespace="ModelAspNet1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Departamentos">
     <Key>
       <PropertyRef Name="Id" />
@@ -18,5 +14,10 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" />
   </EntityType>
+  <EntityContainer Name="ModelAspNet1StoreContainer">
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
 </Schema>
